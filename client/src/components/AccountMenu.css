@@ -1,0 +1,46 @@
+.account-menu {
+  position: relative;
+}
+.account-actions {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 30;
+  width: min(256px, calc(100vw - 24px));
+  padding: 6px;
+  border: 1px solid #e4e7eb;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 12px 32px #17202b22;
+}
+.account-actions button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+  color: #253344;
+  font: inherit;
+  cursor: pointer;
+}
+.account-actions button:hover {
+  background: #f3f5f7;
+}
+.account-actions button:focus-visible {
+  outline: 2px solid #d46119;
+  outline-offset: -2px;
+}
+
+@media (min-width: 901px) {
+  .topbar .profile {
+    min-width: 190px;
+    gap: 12px;
+  }
+  .topbar .account-menu > .icon-button {
+    width: 44px;
+  }
+}

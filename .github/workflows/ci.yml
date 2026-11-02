@@ -1,0 +1,62 @@
+name: Build and verify portal
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: projecthub
+          POSTGRES_PASSWORD: integration-test-only
+          POSTGRES_DB: projecthub_test
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U projecthub -d projecthub_test" --health-interval 5s --health-timeout 5s --health-retries 10
+      seaweedfs:
+        image: chrislusf/seaweedfs:4.48
+        env:
+          AWS_ACCESS_KEY_ID: integration-test-access
+          AWS_SECRET_ACCESS_KEY: integration-test-secret
+        ports: ['8333:8333']
+        options: --health-cmd "curl --fail --silent http://localhost:8333/readyz" --health-interval 5s --health-timeout 5s --health-retries 20 --health-start-period 30s
+    env:
+      DATABASE_URL: Host=localhost;Port=5432;Database=projecthub_test;Username=projecthub;Password=integration-test-only
+      BOOTSTRAP_TOKEN: test-bootstrap-only
+      SEAWEEDFS_TEST_ENDPOINT: http://localhost:8333
+      SEAWEEDFS_TEST_ACCESS_KEY: integration-test-access
+      SEAWEEDFS_TEST_SECRET_KEY: integration-test-secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: client/package-lock.json
+      - run: npm ci && npm run lint && npm run format:check && npm run build
+        working-directory: client
+      - run: dotnet restore ProjectHub.sln
+      - run: dotnet format whitespace ProjectHub.sln --no-restore --verify-no-changes
+      - run: dotnet format style ProjectHub.sln --no-restore --verify-no-changes --diagnostics IDE0005 IDE0011 IDE0040 IDE0161
+      - run: dotnet test tests/ProjectHub.Tests/ProjectHub.Tests.csproj -c Release --no-restore --logger 'trx;LogFileName=results.trx'
+      - run: npm test
+        working-directory: client
+      - run: npx playwright install --with-deps chromium webkit
+        working-directory: client
+      - run: npm run test:e2e
+        working-directory: client
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: |
+            tests/ProjectHub.Tests/TestResults
+            client/test-results
+            client/playwright-report

@@ -1,0 +1,41 @@
+.milestone-form > div {
+  display: grid;
+  grid-template-columns: 110px 1fr 1fr;
+  gap: 13px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 15px;
+}
+.milestone-form > div > strong {
+  font-size: var(--text-ui);
+}
+.milestone-form .field > span {
+  font-size: var(--text-caption);
+}
+.milestone-form input {
+  font-size: var(--text-label);
+  padding: 9px 7px;
+}
+@media (max-width: 650px) {
+  .milestone-form > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .milestone-form > div > strong {
+    grid-column: 1/-1;
+  }
+  .milestone-form .field {
+    margin-bottom: 11px;
+  }
+}
+.stage-editor-row {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.stage-completion-note {
+  color: var(--muted);
+  font-size: var(--text-ui);
+  padding: 12px 0;
+}

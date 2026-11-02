@@ -1,0 +1,15 @@
+**/node_modules/
+**/dist/
+**/bin/
+**/obj/
+**/TestResults/
+.env
+.env.*
+!.env.example
+*.user
+*.tsbuildinfo
+
+client/test-results/
+client/playwright-report/
+
+!.env.production.example

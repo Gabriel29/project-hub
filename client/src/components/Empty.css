@@ -1,0 +1,33 @@
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #987f70;
+}
+.empty h3 {
+  color: #826452;
+  font-size: var(--text-body);
+  margin: 14px 0 8px;
+}
+.empty p {
+  font-size: var(--text-ui);
+  line-height: 1.6;
+  max-width: 350px;
+  margin: 0 auto 15px;
+}
+.empty-icon {
+  display: flex;
+  justify-content: center;
+  color: #cfaa95;
+}
+.empty h3 {
+  color: #67584a;
+}
+.empty-icon {
+  color: #c99166;
+}
+.empty h3 {
+  color: #4c5561;
+}
+.empty-icon {
+  color: #a5acb5;
+}

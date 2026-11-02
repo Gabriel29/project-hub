@@ -1,0 +1,281 @@
+.calendar-list {
+  padding: 4px 18px 17px;
+}
+.calendar-list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding: 8px 0;
+  font-size: var(--text-caption);
+}
+.calendar-list i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e9dcd4;
+  z-index: 1;
+}
+.calendar-list > div:not(:last-child):after {
+  content: "";
+  width: 2px;
+  height: 22px;
+  left: 5px;
+  top: 19px;
+  background: #e9dcd4;
+  position: absolute;
+}
+.calendar-list i.done,
+.calendar-list i.active {
+  background: var(--blue);
+  box-shadow: 0 0 0 3px #fdf4ef;
+}
+.calendar-list strong {
+  font-weight: 500;
+  flex: 1;
+}
+.calendar-list span {
+  color: var(--muted);
+  font-size: var(--text-caption);
+}
+.calendar-table {
+  padding: 12px 24px;
+}
+.calendar-table > div {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--border);
+}
+.milestone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #faf2ee;
+  color: #a17c66;
+  border-radius: 50%;
+}
+.milestone-icon.complete {
+  background: #e9f5ed;
+  color: #2e8b54;
+}
+.calendar-table > div > div:first-of-type {
+  flex: 1;
+}
+.calendar-table h3 {
+  font-size: var(--text-body);
+  margin: 0 0 6px;
+}
+.calendar-table p {
+  font-size: var(--text-ui);
+  color: var(--muted);
+  margin: 0;
+}
+.calendar-table > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: right;
+}
+.calendar-table > p {
+  padding: 18px 0;
+}
+@media (max-width: 650px) {
+  .calendar-table {
+    padding: 8px 15px;
+  }
+  .calendar-table > div {
+    gap: 10px;
+  }
+  .calendar-table h3 {
+    font-size: var(--text-ui);
+  }
+  .calendar-table p {
+    font-size: var(--text-caption);
+  }
+  .calendar-table > div > div:last-child strong {
+    font-size: var(--text-label);
+  }
+  .milestone-icon {
+    height: 35px;
+    width: 35px;
+    flex-shrink: 0;
+  }
+  .milestone-icon svg {
+    width: 19px;
+  }
+}
+.calendar-list i.active {
+  background: #e35612;
+}
+.calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 1.6fr);
+  gap: 40px;
+}
+.stage-list > div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.stage-list > div > div {
+  flex: 1;
+}
+.stage-list small {
+  display: block;
+  margin-top: 7px;
+  font-size: var(--text-label);
+}
+.stage-list strong {
+  font-size: var(--text-ui);
+  font-weight: 500;
+}
+.stage-list time {
+  font-size: var(--text-label);
+  color: var(--muted);
+}
+.stage-list .current strong {
+  color: #c54408;
+}
+.milestone-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  background: #f5f6f8;
+  color: #7a8088;
+}
+.stage-list .current .milestone-icon {
+  background: #fff0e5;
+  color: #df4900;
+}
+@media (max-width: 1100px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+.calendar-status {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 0 28px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 24px;
+}
+.calendar-status > div:first-child {
+  min-width: 160px;
+  display: grid;
+  gap: 6px;
+}
+.calendar-status .status-progress {
+  flex: 1;
+  display: grid;
+  gap: 12px;
+}
+.calendar-status small {
+  color: #81838c;
+  font-size: var(--text-ui);
+}
+.stage-activities {
+  margin-top: 24px;
+}
+.stage-activities h2 {
+  margin: 8px 0 0;
+  font-size: 1.7143rem;
+}
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.activity-grid .calendar-entry {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+}
+.activity-grid .calendar-entry img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0;
+  max-width: none;
+  display: block;
+}
+@media (max-width: 750px) {
+  .activity-grid {
+    grid-template-columns: 1fr;
+  }
+  .calendar-status {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .calendar-status .status-progress {
+    min-width: 160px;
+  }
+  .activity-grid .calendar-entry img {
+    height: 210px;
+  }
+}
+.calendar-status {
+  border: 1px solid #e7e5e2;
+  border-radius: 12px;
+  background: #fff;
+  padding: 24px;
+}
+@media (max-width: 550px) {
+  .calendar-status {
+    padding: 18px;
+  }
+  .stage-activities .card-heading {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+.activity-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.calendar-status .status-progress {
+  min-width: 0;
+}
+.activity-grid {
+  max-width: 760px;
+  margin-inline: 0;
+  grid-template-columns: 1fr;
+}
+.activity-grid {
+  gap: 36px;
+}
+.activity-actions {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+.activity-grid .calendar-entry + .calendar-entry {
+  border-top: 1px solid #e3e7eb;
+  padding-top: 30px;
+}
+.activity-grid {
+  max-width: 900px;
+  gap: 24px;
+}
+.activity-grid .activity-post-full,
+.activity-grid .activity-post-full + .activity-post-full {
+  border: 1px solid #e6e1da;
+  border-radius: 12px;
+  background: #fff;
+  padding: 28px;
+  min-width: 0;
+}
+@media (max-width: 650px) {
+  .activity-grid .activity-post-full,
+  .activity-grid .activity-post-full + .activity-post-full {
+    padding: 20px 16px;
+  }
+}

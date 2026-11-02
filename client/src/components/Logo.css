@@ -1,0 +1,43 @@
+.logo {
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #faf5f2;
+  flex-shrink: 0;
+}
+.logo > span {
+  font-size: var(--text-page);
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+.logo b {
+  color: #eb8347;
+  font-weight: 400;
+}
+.logo small {
+  color: #e8dbd4;
+  letter-spacing: 5px;
+  font-size: var(--text-caption);
+  margin-top: 7px;
+}
+.logo-x {
+  color: #e18854;
+}
+.logo {
+  position: relative;
+  overflow: visible;
+  height: auto;
+  width: 100%;
+  background: #fff;
+}
+.logo img {
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  transform: none;
+}

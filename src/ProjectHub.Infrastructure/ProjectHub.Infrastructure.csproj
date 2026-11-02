@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <ProjectReference Include="../ProjectHub.Application/ProjectHub.Application.csproj" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.13" />
+        <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="10.0.13" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+        <PackageReference Include="AWSSDK.S3" Version="3.7.414.3" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Persistence/PostgresMigrations/*.sql" />
+    </ItemGroup>
+</Project>

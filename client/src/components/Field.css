@@ -1,0 +1,34 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 17px;
+}
+.field > span {
+  font-size: var(--text-label);
+  color: #856553;
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+}
+.field > span {
+  color: #695b4e;
+  font-size: var(--text-label);
+}
+.field > span {
+  border-color: var(--border);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-size: var(--text-input);
+  line-height: var(--leading-ui);
+}
+.field > span {
+  line-height: var(--leading-ui);
+  font-weight: 500;
+}

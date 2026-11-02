@@ -1,0 +1,99 @@
+.account-profile-form .field input,
+.account-profile-form .field select {
+  height: 2.75rem;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: var(--text-input);
+  color: #24211e;
+}
+.account-profile-form .field select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 34px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23505661' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+}
+.modal:has(.account-settings) {
+  max-width: 800px;
+  height: min(720px, calc(100dvh - 48px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.modal:has(.account-settings) > .modal-head,
+.modal:has(.account-settings) > .alert {
+  flex-shrink: 0;
+}
+.account-settings {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 28px;
+}
+.account-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid #e9e3dd;
+  padding-right: 16px;
+}
+.account-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #706962;
+  padding: 12px;
+  text-align: left;
+  font: inherit;
+  font-size: var(--text-input);
+  font-size: var(--text-ui);
+  cursor: pointer;
+}
+.account-tabs button[aria-selected="true"] {
+  background: #fff0e3;
+  color: #9c4c13;
+  font-weight: 600;
+}
+.account-tabs button:hover {
+  background: #fff6ee;
+}
+.account-tabs button:focus-visible {
+  outline: 2px solid #c96720;
+  outline-offset: 2px;
+}
+.account-tabs svg {
+  flex-shrink: 0;
+}
+.account-panels {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+.account-panels h3 {
+  margin: 0 0 20px;
+  font-size: var(--text-heading-sm);
+}
+@media (max-width: 540px) {
+  .account-settings {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .account-tabs {
+    padding-right: 10px;
+  }
+  .account-tabs button {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 6px;
+    overflow-wrap: anywhere;
+  }
+  .account-panels .button {
+    white-space: normal;
+  }
+}

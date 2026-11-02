@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="218" height="360" viewBox="0 0 218 360" fill="none">
+  <defs>
+    <linearGradient id="fade" x1="109" y1="0" x2="109" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset=".35" stop-color="white" stop-opacity=".2"/>
+      <stop offset="1" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="soft"><rect width="218" height="360" fill="url(#fade)"/></mask>
+  </defs>
+  <g mask="url(#soft)">
+    <path d="M-14 40h24v24h-24zm64 32h24v24H50zm96-32h24v24h-24zm32 64h24v24h-24zM18 136h24v24H18zm64-32h24v24H82zm32 64h24v24h-24zm64 0h24v24h-24zM-14 200h24v24h-24zm64 0h24v24H50zm96 32h24v24h-24zM18 264h24v24H18zm64 32h24v24H82zm96-32h24v24h-24zM-14 328h24v24h-24zm128 0h24v24h-24z" fill="#df4900" opacity=".055"/>
+    <path d="M18 72h24v24H18zm96 32h24v24h-24zM50 168h24v24H50zm128 64h24v24h-24zM18 200h24v24H18zm64 32h24v24H82zm32 32h24v24h-24zM50 328h24v24H50zm96-32h24v24h-24z" fill="#ff8b3d" opacity=".09"/>
+    <path d="M82 40h24v24H82zM18 104h24v24H18zm128 32h24v24h-24zM-14 168h24v24h-24zm96 32h24v24H82zm32 32h24v24h-24zM50 264h24v24H50zm128 64h24v24h-24z" stroke="#c7460a" stroke-opacity=".09"/>
+    <path d="M42 288v32h32m64-64h32v32M10 192h32" stroke="#df4900" stroke-opacity=".065"/>
+  </g>
+</svg>

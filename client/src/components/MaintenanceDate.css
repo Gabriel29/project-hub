@@ -1,0 +1,33 @@
+.page-heading.maintenance-heading {
+  flex-direction: row;
+  align-items: center;
+}
+
+.maintenance-notice {
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  color: #8a3808;
+  background: #fff4e8;
+  font-weight: 500;
+}
+.page-heading.maintenance-heading > div {
+  min-width: 0;
+}
+.page-heading.maintenance-heading h1 {
+  margin-bottom: 0;
+}
+.page-heading.maintenance-heading > button {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+@media (max-width: 650px) {
+  .page-heading.maintenance-heading h1 {
+    font-size: var(--text-section);
+  }
+  .page-heading.maintenance-heading > button {
+    max-width: 145px;
+    white-space: normal;
+    font-size: var(--text-ui);
+  }
+}

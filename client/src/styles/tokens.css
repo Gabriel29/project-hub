@@ -1,0 +1,27 @@
+:root {
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+    "Liberation Sans", Arial, sans-serif;
+  --text-caption: 0.75rem;
+  --text-label: 0.78125rem;
+  --text-ui: 0.8125rem;
+  --text-body: 0.9375rem;
+  --text-input: 1rem;
+  --text-heading-sm: 1.0625rem;
+  --text-section: 1.125rem;
+  --text-heading: 1.375rem;
+  --text-page: 1.75rem;
+  --leading-ui: 1.45;
+  --leading-body: 1.65;
+  --leading-heading: 1.25;
+  --sidebar-width: 16rem;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  /* Respect the browser's preferred text size; keep UI density stable across displays. */
+  font-size: 100%;
+  color: #20242b;
+  background: #fff;
+  --blue: #df4900;
+  --muted: #626b77;
+  --border: #e3e7eb;
+}

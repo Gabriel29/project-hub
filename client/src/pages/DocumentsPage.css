@@ -1,0 +1,117 @@
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--muted);
+}
+.search input {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 11px 0;
+  font-size: var(--text-ui);
+}
+@media (max-width: 650px) {
+  .search {
+    width: 100%;
+  }
+  .search input {
+    width: 100%;
+  }
+}
+.search {
+  border-color: var(--border);
+}
+.search:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px #ff5a001c;
+}
+.search input:focus {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+.search > svg {
+  flex-shrink: 0;
+}
+
+.folder-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+}
+.folder-breadcrumb button {
+  border: 0;
+  padding: 0;
+  color: #c54408;
+  background: transparent;
+}
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+@media (max-width: 760px) {
+  .search {
+    width: 100%;
+  }
+}
+.folder-breadcrumb > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.document-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+@media (max-width: 600px) {
+  .document-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+.maintenance-workspace {
+  margin-bottom: 24px;
+}
+.intervention-list {
+  display: grid;
+  gap: 16px;
+}
+.maintenance-documents-heading {
+  margin: 32px 0 0;
+  font-size: var(--text-section);
+}
+.folder-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.folder-breadcrumb button {
+  min-height: 40px;
+}
+.shared-folder-section {
+  min-width: 0;
+  margin-bottom: 28px;
+}
+.document-tiles.shared-folder-row {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+@media (max-width: 600px) {
+  .document-tiles.shared-folder-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .search input {
+    font-size: var(--text-body);
+  }
+}

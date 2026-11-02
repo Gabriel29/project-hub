@@ -1,0 +1,93 @@
+# Local development: copy .env.example to .env, then docker compose up --build
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: ['127.0.0.1:5432:5432']
+    volumes: ['postgres-data:/var/lib/postgresql']
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  storage:
+    image: chrislusf/seaweedfs:4.48
+    command:
+      - mini
+      - -dir=/data
+      - -ip=127.0.0.1
+      - -ip.bind=0.0.0.0
+      - -admin.ui=false
+      - -webdav=false
+      - -s3.iam=false
+      - -s3.port.iceberg=0
+      - -s3.port.lance=0
+      - -master.telemetry=false
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    ports: ['127.0.0.1:8333:8333']
+    volumes: ['seaweedfs-data:/data']
+    healthcheck:
+      test: [CMD, curl, --fail, --silent, http://localhost:8333/readyz]
+      interval: 5s
+      timeout: 5s
+      start_period: 30s
+      retries: 20
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      PORT: ${PORT}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN}
+      AllowedHosts: ${AllowedHosts}
+      DATABASE_URL: ${DATABASE_URL}
+      BOOTSTRAP_TOKEN: ${BOOTSTRAP_TOKEN}
+      AWS_ENDPOINT_URL: ${AWS_ENDPOINT_URL}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_S3_BUCKET_NAME: ${AWS_S3_BUCKET_NAME}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+      AWS_S3_FORCE_PATH_STYLE: ${AWS_S3_FORCE_PATH_STYLE}
+      CREATE_STORAGE_BUCKET_ON_STARTUP: ${CREATE_STORAGE_BUCKET_ON_STARTUP}
+      VERIFY_STORAGE_ON_STARTUP: ${VERIFY_STORAGE_ON_STARTUP}
+      STORAGE_DELETION_TIMEOUT_MINUTES: ${STORAGE_DELETION_TIMEOUT_MINUTES}
+    ports: ['127.0.0.1:${PORT}:${PORT}']
+    volumes:
+      - .:/workspace
+      - nuget-cache:/root/.nuget/packages
+    depends_on:
+      postgres:
+        condition: service_healthy
+      storage:
+        condition: service_healthy
+    restart: on-failure
+    healthcheck:
+      test: [CMD-SHELL, 'curl --fail --silent "http://localhost:$${PORT}/health"']
+      interval: 5s
+      timeout: 5s
+      start_period: 60s
+      retries: 20
+  client:
+    image: node:22-alpine
+    working_dir: /workspace/client
+    command: sh -c "npm ci --no-audit --no-fund && npm run dev"
+    environment:
+      API_PROXY_TARGET: ${API_PROXY_TARGET}
+    ports: ['127.0.0.1:5173:5173']
+    volumes:
+      - ./client:/workspace/client
+      - client-modules:/workspace/client/node_modules
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  postgres-data:
+  seaweedfs-data:
+  nuget-cache:
+  client-modules:

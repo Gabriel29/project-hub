@@ -1,0 +1,106 @@
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18.75rem), 1fr));
+  gap: 20px;
+}
+.note-card {
+  position: relative;
+  height: 15.5rem;
+  min-width: 0;
+  padding: 0;
+}
+.note-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+.note-preview:hover {
+  background: rgb(0 0 0 / 2%);
+}
+.note-preview:focus-visible {
+  outline: 2px solid var(--accent, #1b7161);
+  outline-offset: 3px;
+}
+.note-preview small {
+  padding-right: 32px;
+  color: var(--muted);
+}
+.note-preview h2,
+.note-preview p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.note-preview h2 {
+  -webkit-line-clamp: 2;
+  font-size: var(--text-section);
+  line-height: var(--leading-heading);
+  flex-shrink: 0;
+}
+.note-preview p {
+  -webkit-line-clamp: 5;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: var(--text-body);
+}
+.note-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+.note-action-popover {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  right: 0;
+  min-width: 130px;
+  padding: 6px;
+  background: var(--surface, white);
+  border: 1px solid var(--line, #ddd);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+}
+.note-action-popover button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.note-action-popover button:hover,
+.note-action-popover button:focus-visible {
+  background: rgb(0 0 0 / 6%);
+}
+.note-full-body {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 650px) {
+  .notes-workspace .section-toolbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+.note-full-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  max-width: 68ch;
+}

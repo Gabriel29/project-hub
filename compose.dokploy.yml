@@ -1,0 +1,82 @@
+# Standalone production stack. Keep service/volume names stable across deployments.
+# Dokploy manages HTTPS routing to web:80 with Isolated Deployments enabled.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      PORT: '80'
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://portal.example.com}
+      AllowedHosts: ${PORTAL_ALLOWED_HOSTS:-portal.example.com;localhost}
+      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+      TRUSTED_PROXY_NETWORKS: ${TRUSTED_PROXY_NETWORKS:-}
+      DATABASE_URL: "Host=postgres;Port=5432;Database=projecthub;Username=projecthub;Password=${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}"
+      BOOTSTRAP_TOKEN: ${BOOTSTRAP_TOKEN:-}
+      AWS_ENDPOINT_URL: http://storage:8333
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:?Set AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:?Set AWS_SECRET_ACCESS_KEY}
+      AWS_S3_BUCKET_NAME: projecthub-files
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_S3_FORCE_PATH_STYLE: 'true'
+      CREATE_STORAGE_BUCKET_ON_STARTUP: 'true'
+      VERIFY_STORAGE_ON_STARTUP: 'true'
+      STORAGE_DELETION_TIMEOUT_MINUTES: ${STORAGE_DELETION_TIMEOUT_MINUTES:-90}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      storage:
+        condition: service_healthy
+    expose: ['80']
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: '80'
+    stop_grace_period: 30s
+    networks: [default, backend]
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: projecthub
+      POSTGRES_DB: projecthub
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: ['postgres-data:/var/lib/postgresql']
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U projecthub -d projecthub']
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    networks: [backend]
+  storage:
+    image: chrislusf/seaweedfs:4.48
+    restart: unless-stopped
+    command:
+      - mini
+      - -dir=/data
+      - -ip=127.0.0.1
+      - -ip.bind=0.0.0.0
+      - -admin.ui=false
+      - -webdav=false
+      - -s3.iam=false
+      - -s3.port.iceberg=0
+      - -s3.port.lance=0
+      - -master.telemetry=false
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:?Set AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:?Set AWS_SECRET_ACCESS_KEY}
+    volumes: ['seaweedfs-data:/data']
+    healthcheck:
+      test: [CMD, curl, --fail, --silent, http://localhost:8333/readyz]
+      interval: 5s
+      timeout: 5s
+      start_period: 30s
+      retries: 20
+    networks: [backend]
+volumes:
+  postgres-data:
+  seaweedfs-data:
+networks:
+  backend:
+    internal: true

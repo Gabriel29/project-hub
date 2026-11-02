@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="100" viewBox="0 0 440 100" fill="none">
+  <rect x="4" y="14" width="72" height="72" rx="18" fill="#c24400"/>
+  <path d="M24 38h32v24H24zM40 26v12m0 24v12M16 50h8m32 0h8" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="96" y="65" fill="#202b37" font-family="system-ui, sans-serif" font-size="48" font-weight="650" letter-spacing="-2">ProjectHub</text>
+</svg>

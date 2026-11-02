@@ -1,0 +1,5 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0
+WORKDIR /workspace
+ENV ASPNETCORE_ENVIRONMENT=Development DOTNET_USE_POLLING_FILE_WATCHER=1
+EXPOSE 8080
+CMD ["dotnet", "watch", "--no-hot-reload", "--project", "src/ProjectHub.WebAPI", "run", "--no-launch-profile"]

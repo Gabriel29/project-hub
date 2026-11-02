@@ -1,0 +1,60 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #341a0ba3;
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.modal {
+  background: white;
+  max-width: 650px;
+  width: 100%;
+  max-height: 92vh;
+  overflow: auto;
+  border-radius: 13px;
+  padding: 25px;
+  box-shadow: 0 25px 100px #0003;
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 23px;
+}
+.modal-head h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--text-heading);
+  margin: 0;
+}
+.modal form > .button {
+  margin-top: 8px;
+}
+@media (max-width: 650px) {
+  .modal {
+    padding: 20px;
+    max-height: 94vh;
+  }
+  .modal-backdrop {
+    padding: 12px;
+  }
+}
+.modal {
+  border-radius: 7px;
+}
+.modal-backdrop {
+  background: #30281f88;
+}
+.modal:has(.pdf-reader),
+.modal:has(.full-photo) {
+  width: min(1100px, 94vw);
+  max-width: 1100px;
+}
+.modal-head:has(.visually-hidden) {
+  justify-content: flex-end;
+}

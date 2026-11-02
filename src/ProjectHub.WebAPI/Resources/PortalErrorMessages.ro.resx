@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <data name="accessDenied" xml:space="preserve">
+    <value>Acces interzis.</value>
+  </data>
+  <data name="accountActivated" xml:space="preserve">
+    <value>Cont deja activat.</value>
+  </data>
+  <data name="accountNotFound" xml:space="preserve">
+    <value>Cont inexistent.</value>
+  </data>
+  <data name="activateAccount" xml:space="preserve">
+    <value>Activați contul.</value>
+  </data>
+  <data name="activityNotFound" xml:space="preserve">
+    <value>Activitate inexistentă.</value>
+  </data>
+  <data name="activityPhotoLimit" xml:space="preserve">
+    <value>Maximum 20 de fotografii per activitate.</value>
+  </data>
+  <data name="changeCoverBeforeDelete" xml:space="preserve">
+    <value>Schimbați fotografia de copertă înainte de ștergere.</value>
+  </data>
+  <data name="clientNotFound" xml:space="preserve">
+    <value>Client inexistent.</value>
+  </data>
+  <data name="clientUnavailable" xml:space="preserve">
+    <value>Client indisponibil.</value>
+  </data>
+  <data name="concurrentChange" xml:space="preserve">
+    <value>Această înregistrare a fost modificată. Reîncărcați și încercați din nou.</value>
+  </data>
+  <data name="coverMustBePhoto" xml:space="preserve">
+    <value>Coperta trebuie să fie o fotografie.</value>
+  </data>
+  <data name="credentialsOrLocked" xml:space="preserve">
+    <value>Email sau parolă incorectă sau cont blocat temporar.</value>
+  </data>
+  <data name="currentStageRemoval" xml:space="preserve">
+    <value>Etapa curentă nu poate fi eliminată. Schimbați întâi etapa curentă.</value>
+  </data>
+  <data name="detachPhotoBeforeMove" xml:space="preserve">
+    <value>Detașați fotografia din activitate înainte de mutare.</value>
+  </data>
+  <data name="detachPhotosBeforeDelete" xml:space="preserve">
+    <value>Detașați fotografiile din activități înainte de ștergere.</value>
+  </data>
+  <data name="detachPhotosBeforeMove" xml:space="preserve">
+    <value>Detașați fotografiile din activități înainte de mutare.</value>
+  </data>
+  <data name="documentNotFound" xml:space="preserve">
+    <value>Document inexistent.</value>
+  </data>
+  <data name="emailCannotChange" xml:space="preserve">
+    <value>Emailul nu poate fi modificat.</value>
+  </data>
+  <data name="emailInUse" xml:space="preserve">
+    <value>Emailul este deja folosit.</value>
+  </data>
+  <data name="expiredOrRevokedLink" xml:space="preserve">
+    <value>Linkul a expirat sau a fost revocat. Solicită un link nou.</value>
+  </data>
+  <data name="fileNameTooLong" xml:space="preserve">
+    <value>Nume fișier prea lung.</value>
+  </data>
+  <data name="fileNotFound" xml:space="preserve">
+    <value>Fișier inexistent.</value>
+  </data>
+  <data name="folderMoveCycle" xml:space="preserve">
+    <value>Un folder nu poate fi mutat în el însuși sau în subfolderele sale.</value>
+  </data>
+  <data name="folderNameExists" xml:space="preserve">
+    <value>Există deja un folder cu această denumire.</value>
+  </data>
+  <data name="folderOutsideProject" xml:space="preserve">
+    <value>Folder invalid pentru acest proiect.</value>
+  </data>
+  <data name="folderOutsideSection" xml:space="preserve">
+    <value>Folderul nu aparține secțiunii selectate.</value>
+  </data>
+  <data name="incorrectPassword" xml:space="preserve">
+    <value>Parola curentă este incorectă.</value>
+  </data>
+  <data name="invalidCalendar" xml:space="preserve">
+    <value>Calendar invalid.</value>
+  </data>
+  <data name="invalidClient" xml:space="preserve">
+    <value>Client invalid.</value>
+  </data>
+  <data name="invalidClientName" xml:space="preserve">
+    <value>Denumire client invalidă.</value>
+  </data>
+  <data name="invalidCredentials" xml:space="preserve">
+    <value>Email sau parolă incorectă.</value>
+  </data>
+  <data name="invalidEmail" xml:space="preserve">
+    <value>Email invalid.</value>
+  </data>
+  <data name="invalidFileFormat" xml:space="preserve">
+    <value>Format de fișier invalid.</value>
+  </data>
+  <data name="invalidFileName" xml:space="preserve">
+    <value>Introduceți o denumire de fișier de maximum 200 de caractere.</value>
+  </data>
+  <data name="invalidFileSize" xml:space="preserve">
+    <value>Fișier invalid sau mai mare de 25 MB.</value>
+  </data>
+  <data name="invalidFolder" xml:space="preserve">
+    <value>Folder invalid.</value>
+  </data>
+  <data name="invalidFolderName" xml:space="preserve">
+    <value>Denumire folder invalidă.</value>
+  </data>
+  <data name="invalidLanguage" xml:space="preserve">
+    <value>Limba trebuie să fie en sau ro.</value>
+  </data>
+  <data name="invalidLinkType" xml:space="preserve">
+    <value>Tip de link invalid pentru acest cont.</value>
+  </data>
+  <data name="invalidName" xml:space="preserve">
+    <value>Nume invalid.</value>
+  </data>
+  <data name="invalidNote" xml:space="preserve">
+    <value>Notiță invalidă.</value>
+  </data>
+  <data name="invalidPhone" xml:space="preserve">
+    <value>Număr de telefon invalid.</value>
+  </data>
+  <data name="invalidPhotoDestination" xml:space="preserve">
+    <value>Destinație fotografie invalidă.</value>
+  </data>
+  <data name="invalidPhotos" xml:space="preserve">
+    <value>Fotografii invalide.</value>
+  </data>
+  <data name="invalidProject" xml:space="preserve">
+    <value>Date proiect invalide.</value>
+  </data>
+  <data name="invalidRequest" xml:space="preserve">
+    <value>Verificați informațiile trimise și încercați din nou.</value>
+  </data>
+  <data name="invalidSection" xml:space="preserve">
+    <value>Secțiune invalidă.</value>
+  </data>
+  <data name="invalidSetupKey" xml:space="preserve">
+    <value>Cheia de configurare este incorectă.</value>
+  </data>
+  <data name="invalidStage" xml:space="preserve">
+    <value>Etapă invalidă.</value>
+  </data>
+  <data name="invalidStages" xml:space="preserve">
+    <value>Etape invalide.</value>
+  </data>
+  <data name="invalidStatus" xml:space="preserve">
+    <value>Stadiu invalid.</value>
+  </data>
+  <data name="invalidUpdate" xml:space="preserve">
+    <value>Actualizare invalidă.</value>
+  </data>
+  <data name="linkExpiredOrUsed" xml:space="preserve">
+    <value>Link expirat sau utilizat.</value>
+  </data>
+  <data name="maintenance" xml:space="preserve">
+    <value>Portalul este în mentenanță. Revenim în curând.</value>
+  </data>
+  <data name="notFound" xml:space="preserve">
+    <value>Resursa solicitată nu a fost găsită.</value>
+  </data>
+  <data name="noteNotFound" xml:space="preserve">
+    <value>Notiță inexistentă.</value>
+  </data>
+  <data name="operationFailed" xml:space="preserve">
+    <value>Operațiunea nu a putut fi finalizată.</value>
+  </data>
+  <data name="ownerOnlyPhoto" xml:space="preserve">
+    <value>Doar proprietarul poate schimba fotografia proiectului.</value>
+  </data>
+  <data name="passwordRequirements" xml:space="preserve">
+    <value>Parola necesită minimum 6 caractere, o literă și o cifră.</value>
+  </data>
+  <data name="prefixesExhausted" xml:space="preserve">
+    <value>Toate prefixele sunt ocupate.</value>
+  </data>
+  <data name="progressPhotosOnly" xml:space="preserve">
+    <value>Folderul de progres acceptă doar fotografii.</value>
+  </data>
+  <data name="projectNotFound" xml:space="preserve">
+    <value>Proiect inexistent.</value>
+  </data>
+  <data name="rateLimited" xml:space="preserve">
+    <value>Prea multe solicitări. Încercați din nou în scurt timp.</value>
+  </data>
+  <data name="requestNewLink" xml:space="preserve">
+    <value>Link expirat sau utilizat. Solicitați un link nou.</value>
+  </data>
+  <data name="revisionsUnsupported" xml:space="preserve">
+    <value>Reviziile nu mai sunt acceptate. Încărcați un fișier nou.</value>
+  </data>
+  <data name="searchTooLong" xml:space="preserve">
+    <value>Căutarea este prea lungă.</value>
+  </data>
+  <data name="selectActiveManager" xml:space="preserve">
+    <value>Selectați un manager activ din echipă.</value>
+  </data>
+  <data name="selectExistingClient" xml:space="preserve">
+    <value>Selectați un client existent sau Fara Client.</value>
+  </data>
+  <data name="sessionExpired" xml:space="preserve">
+    <value>Sesiunea a expirat. Autentifică-te din nou.</value>
+  </data>
+  <data name="setupCompleted" xml:space="preserve">
+    <value>Configurarea a fost finalizată.</value>
+  </data>
+  <data name="setupLink" xml:space="preserve">
+    <value>Cheia de configurare este incorectă. Deschide linkul privat de configurare primit.</value>
+  </data>
+  <data name="signInRequired" xml:space="preserve">
+    <value>Autentificare necesară.</value>
+  </data>
+  <data name="stagesHaveActivities" xml:space="preserve">
+    <value>Etapele cu activități nu pot fi eliminate. Mutați întâi activitățile.</value>
+  </data>
+  <data name="unexpected" xml:space="preserve">
+    <value>A apărut o eroare. Încercați din nou.</value>
+  </data>
+  <data name="uploadForbidden" xml:space="preserve">
+    <value>Nu aveți drept de încărcare în acest folder.</value>
+  </data>
+  <data name="valueExists" xml:space="preserve">
+    <value>Valoarea există deja.</value>
+  </data>
+  <data name="invalidValue" xml:space="preserve">
+    <value>Valoare invalidă.</value>
+  </data>
+</root>

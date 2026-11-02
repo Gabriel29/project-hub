@@ -1,0 +1,127 @@
+.project-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #a38f83;
+  font-size: var(--text-caption);
+  letter-spacing: 1px;
+}
+.breadcrumb strong {
+  color: #856553;
+  font-size: var(--text-caption);
+  letter-spacing: 0.3px;
+}
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toolbar-actions select {
+  font-size: var(--text-ui);
+  max-width: 310px;
+  padding: 9px 12px;
+  background: #fefbf9;
+}
+.toolbar-actions .button {
+  font-size: var(--text-ui);
+  padding: 9px 12px;
+}
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+  gap: 15px;
+}
+.page-heading h1 {
+  margin-bottom: 8px;
+}
+.page-heading p {
+  font-size: var(--text-ui);
+  color: var(--muted);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .project-toolbar {
+    flex-wrap: wrap;
+  }
+  .breadcrumb {
+    font-size: var(--text-caption);
+  }
+  .page-heading {
+    align-items: flex-start;
+  }
+  .page-heading h1 {
+    font-size: var(--text-heading);
+  }
+}
+@media (max-width: 650px) {
+  .toolbar-actions {
+    width: 100%;
+  }
+  .toolbar-actions select {
+    flex: 1;
+    max-width: none;
+    font-size: var(--text-caption);
+  }
+  .page-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+.page-heading {
+  margin: 14px 0 26px;
+}
+.page-heading h1 {
+  font-size: var(--text-page);
+  font-weight: 550;
+  letter-spacing: -1px;
+}
+.project-toolbar {
+  margin-bottom: 20px;
+}
+.project-toolbar {
+  margin-bottom: 24px;
+}
+.breadcrumb {
+  font-size: var(--text-caption);
+  letter-spacing: 0.7px;
+}
+@media (max-width: 760px) {
+  .page-heading h1 {
+    font-size: var(--text-heading);
+  }
+}
+@media (max-width: 650px) {
+  .project-toolbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .breadcrumb {
+    line-height: 1.5;
+  }
+}
+
+.page-heading h1 {
+  font-size: var(--text-page);
+  line-height: var(--leading-heading);
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+@media (max-width: 760px) {
+  .page-heading h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 760px) {
+  .toolbar-actions select {
+    font-size: var(--text-input);
+  }
+}
